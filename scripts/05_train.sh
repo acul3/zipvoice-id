@@ -40,6 +40,7 @@ MAX_DURATION=200    # Max batch duration in seconds (lower if OOM: try 100-150)
 LR_HOURS=5000       # Learning rate schedule horizon in data-hours
 BASE_LR=0.02        # Base learning rate (ZipVoice default)
 SAVE_EVERY_N=5000   # Save checkpoint every N batches
+NUM_BUCKETS=30      # Buckets for dynamic batching (must be <= num training cuts)
 LANG="id"
 
 # --- Validate inputs ---
@@ -86,8 +87,8 @@ python3 -m zipvoice.bin.train_zipvoice \
     --lr-hours "$LR_HOURS" \
     --base-lr "$BASE_LR" \
     --save-every-n "$SAVE_EVERY_N" \
+    --num-buckets "$NUM_BUCKETS" \
     --model-config "$MODEL_CONFIG" \
-    --on-the-fly-feats 0 \
     --tokenizer espeak \
     --lang "$LANG" \
     --token-file "$TOKEN_FILE" \

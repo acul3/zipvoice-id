@@ -1,0 +1,14 @@
+.venv/
+data/audiobook_extracted/
+data/audiobook_noice_v2/
+data/common_voice_id/
+data/fbank/
+data/fbank_audiobook/
+data/manifests/
+data/manifests_audiobook/
+data/raw/
+exp/
+output/
+pretrained/
+__pycache__/
+*.pyc
